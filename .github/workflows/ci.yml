@@ -1,37 +1,27 @@
-name: CI for Kafka Project
+name: Build and Test
 
-on: [push, pull_request]  # Se ejecuta en cada push o PR
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest  # Se ejecuta en un contenedor Linux
-
-    services:
-      kafka:
-        image: wurstmeister/kafka:latest  # Imagen de Kafka
-        ports:
-          - 9092:9092
-        env:
-          KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-          KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-
-      zookeeper:
-        image: wurstmeister/zookeeper:latest
-        ports:
-          - 2181:2181
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar el repositorio
-        uses: actions/checkout@v4
+      - name: Check out code
+        uses: actions/checkout@v3
 
-      - name: Configurar Java
+      - name: Set up Java 21
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: 'adoptopenjdk'
+          java-version: '21'
 
-      - name: Instalar dependencias con Maven
-        run: mvn install
+      - name: Build with Maven
+        run: mvn clean install
 
-      - name: Ejecutar pruebas
-        run: mvn test
