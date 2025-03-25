@@ -1,4 +1,4 @@
-package Producer;
+package com.example.demo.Producer;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;

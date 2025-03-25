@@ -1,4 +1,4 @@
-package controller;
+package com.example.demo.controller;
 
 
 
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class KafkaMessageController {
 
-    private static final int MAX_MESSAGES = 100;
+    private final int MAX_MESSAGES = 100;
 
     private final List<String> saveMessages = new LinkedList<>();
 

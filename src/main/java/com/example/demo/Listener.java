@@ -1,17 +1,26 @@
 package com.example.demo;
 
+import com.example.demo.controller.KafkaMessageController;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.annotation.PartitionOffset;
-import org.springframework.kafka.annotation.TopicPartition;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Listener {
 
+    private final KafkaMessageController messageController;
 
-    //message with key
-    @KafkaListener(topics = "myTopickey", groupId = "groupKey")
+    @Autowired
+    public Listener(KafkaMessageController messageController) {
+        this.messageController = messageController;
+    }
+
+
+    @KafkaListener(topics = "my-topic", groupId = "group1")
     public void consume(ConsumerRecord<String, String> record) {
-        System.out.printf("Key: %s, Value: %s, Partition: %d, Offset: %d%n",
-                record.key(), record.value(), record.partition(), record.offset());
+        String message = "Key: " + record.key() + ", Value: " + record.value();
+        System.out.println(message);
+        messageController.addMessage(message);
     }
 }
