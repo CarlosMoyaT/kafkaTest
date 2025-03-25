@@ -1,0 +1,20 @@
+--TODO--
+
+
+- informarme sobre clases inmutables, y el enum el record User sin el public class
+
+-crear el Endpoint to Create User (UserController class)
+
+
+-PARA EL PRODUCER:
+ Falta por hacer:
+
+Simular datos en tiempo real (ejemplo: logs, pedidos, sensores).
+Implementar múltiples productores para escalabilidad.
+
+-PARA EL CONSUMER:
+ Falta por hacer:
+
+Implementar el Consumer con Spring Boot. (consumer configurado, falta consumir mensajes)
+Almacenar eventos en una base de datos (opcional).
+Crear una API REST para consultar eventos recientes.
