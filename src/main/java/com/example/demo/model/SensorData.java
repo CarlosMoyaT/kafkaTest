@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.cglib.core.Local;
@@ -7,6 +9,8 @@ import org.springframework.cglib.core.Local;
 import java.time.LocalDateTime;
 @Getter
 @Setter
+@Entity
+@Table(name = "sensor_data")
 public class SensorData {
     private String sensorID;
     private double temperature;

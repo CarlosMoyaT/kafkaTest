@@ -3,22 +3,19 @@ spring:
     name: message-publisher
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/sensores
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
 
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
 
   kafka:
@@ -33,7 +30,7 @@ spring:
     socket-timeout: 10s
 
 server:
-  port: 8089
+  port: 8081
 
 app:
   kafka:
