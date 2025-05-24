@@ -1,24 +1,32 @@
--PROYECTO IoT con Kafka, PostgreSQL, Prometheus y Grafana-
+-PROYECTO con Spring Boot, Kafka, PostgreSQL, Prometheus y Grafana-
 
-Este proyecto implementa una arquitectura de microservicios orientada a IoT (Internet of Things), en la que se recopilan, almacenan y monitorean datos de sensores. Utiliza Apache Kafka para mensajería, PostgreSQL como base de datos, y herramientas de observabilidad como Prometheus y Grafana.
-
---Objetivo del proyecto--
-
-Aprender como funciona Kafka y como desarrollar una arquitectura escalable para soluciones IoT que permita recibir datos de sensores en tiempo real, almacenarlos y monitorearlos, todo mediante tecnologías modernas orientadas a microservicios.
+El objetivo de este proyecto es principalmente aprender como funciona Kafka y como mostrar métricas sobre datos o eventos, almacenarlos y monitorearlos, también como desarrollar una arquitectura escalable. 
+En este caso el proyecto está relacionado con algo que me apasiona como la astronomía
 
 ## TECNOLOGÍAS UTILIZADAS
 
-- Apache Kafka – Plataforma de mensajería distribuida.
-- Zookeeper – Coordinador para Kafka.
-- PostgreSQL – Base de datos para persistencia de datos IoT.
-- Prometheus – Recolección de métricas.
-- Grafana – Visualización de métricas.
-- Docker & Docker Compose – Contenerización y orquestación.
-- Spring Boot – Para producir/consumir eventos.
+- Spring Boot 
+- Apache Kafka 
+- Zookeeper 
+- PostgreSQL 
+- Prometheus 
+- Grafana 
+- Docker & Docker Compose 
 
 ## Requisitos previos
 
 - Docker
 - Docker Compose
-- Java 21 
+- Java 21
+
+-ACTUALIZACIÓN DEL PROYECTO-
+
+De momento he conseguido mostrar métricas en Prometheus por varias expresiones como por ejemplo : rate(kafka_controller_controllereventmanager_count[1m])
+que calcula la tasa de cambio por segundo del contador durante el último minuto. Lo cual indica que la gráfica está activa y generando eventos.
+![Prometheus graphic](images/Prometheus%20graphic.JPG)
+
+Serguiré actualizando ya que mi intención es mostrar una gráfica donde se muestren datos como temperatura.
+
+
+
 
