@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.kafka;
 
 
 
@@ -6,11 +6,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.LinkedList;
-import java.util.List;
 
 @Getter
 @Setter

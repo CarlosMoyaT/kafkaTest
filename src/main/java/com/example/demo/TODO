@@ -1,20 +1,53 @@
---TODO--
+5. 🌐 Crear un controlador REST
+Ubicación: .../controller/ObservationController.java
 
+Endpoints sugeridos:
 
-- informarme sobre clases inmutables, y el enum el record User sin el public class
+GET /api/observations → devuelve todas o las más recientes.
 
--crear el Endpoint to Create User (UserController class)
+GET /api/observations?type=planet → filtrado por tipo.
 
+(opcional) GET /api/observations/stats → estadísticas simples.
 
--PARA EL PRODUCER:
- Falta por hacer:
+6. 🛰️ Crear un listener Kafka
+Ubicación: .../kafka/ObservationListener.java
 
-Simular datos en tiempo real (ejemplo: logs, pedidos, sensores).
-Implementar múltiples productores para escalabilidad.
+Escucha mensajes en un topic como "astro.observations".
 
--PARA EL CONSUMER:
- Falta por hacer:
+Deserializa el mensaje a un Observation (o DTO).
 
-Implementar el Consumer con Spring Boot. (consumer configurado, falta consumir mensajes)
-Almacenar eventos en una base de datos (opcional).
-Crear una API REST para consultar eventos recientes.
+Llama al servicio para guardar la observación en PostgreSQL.
+
+7. 📈 Exponer métricas personalizadas
+Ubicación: .../metrics/ObservationMetrics.java
+
+Usa @Autowired MeterRegistry (de Micrometer) para:
+
+Contar observaciones por tipo.
+
+Calcular intensidad promedio (si quieres ir más allá).
+
+Exponer métricas como:
+
+astro_observations_total
+
+astro_observations_by_type
+
+astro_avg_intensity
+
+8. 🧪 Pruebas (Opcional pero deseable)
+Pruebas unitarias para servicio y repositorio.
+
+Pruebas de integración para el listener Kafka.
+
+9. 🧩 Prometheus + Grafana
+Asegúrate de que tu Spring Boot expone /actuator/prometheus
+
+Grafana: crea un dashboard con:
+
+Conteo por tipo
+
+Eventos por segundo
+
+Gráfica de intensidad
+
