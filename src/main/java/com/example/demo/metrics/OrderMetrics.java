@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
-public class ObservationMetrics {
+public class OrderMetrics {
 
     private final MeterRegistry meterRegistry;
     private final AtomicReference<Double> temperatureGauge = new AtomicReference<>(0.0);
 
-    public ObservationMetrics(MeterRegistry meterRegistry) {
+    public OrderMetrics(MeterRegistry meterRegistry) {
         this.meterRegistry = meterRegistry;
     }
 
