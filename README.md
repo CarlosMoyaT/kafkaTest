@@ -22,7 +22,7 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 
 De momento he conseguido mostrar métricas en Prometheus por varias expresiones como por ejemplo : rate(kafka_controller_controllereventmanager_count[1m])
 que calcula la tasa de cambio por segundo del contador durante el último minuto. Lo cual indica que la gráfica está activa y generando eventos.
-![Prometheus graphic](Metrica.JPG)
+![Prometheus graphic](images/Metrica.JPG)
 
 Serguiré actualizando ya que mi intención es mostrar una gráfica donde se muestren datos como temperatura.
 
