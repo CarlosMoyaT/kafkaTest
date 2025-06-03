@@ -1,10 +1,11 @@
--PROYECTO con Spring Boot, Kafka, PostgreSQL, Prometheus y Grafana-
+-PROYECTO-
 
 El objetivo de este proyecto es principalmente aprender como funciona Kafka y como mostrar métricas sobre datos o eventos, almacenarlos y monitorearlos, también como desarrollar una arquitectura escalable y que facilite realizar cambios sin afectar a todo el código
 
 ## TECNOLOGÍAS UTILIZADAS
 
-- Spring Boot 
+- Spring Boot
+- Micrometer 
 - Apache Kafka 
 - Zookeeper 
 - PostgreSQL 
