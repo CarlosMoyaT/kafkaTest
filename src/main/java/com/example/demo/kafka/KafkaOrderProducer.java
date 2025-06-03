@@ -29,6 +29,7 @@ public class KafkaOrderProducer {
 
     private final String[] products = {"laptop", "Smartphone", "Tablet", "Keyboard", "Monitor"};
 
+
     @Scheduled(fixedRate = 5000)
     public void produceRandomOrder() {
         Order order = generateRamdomOrder();

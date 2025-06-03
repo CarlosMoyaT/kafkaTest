@@ -10,9 +10,7 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
 
-    List<Order> findByType(String type);
-
-
+    List<Order> findByProductName(String productName);
     Order findTopByOrderByTimestampDesc();
 }
 

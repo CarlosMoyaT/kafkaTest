@@ -20,23 +20,22 @@ public class OrderService {
 
     public void saveOrder(Order order) {
         orderRepository.save(order);
+        orderMetrics.trackOrder(order.getPrice(), order.getProductName());
 
     }
 
-    public List<Order> getOrdersByType(String type) {
-        return orderRepository.findByType(type);
-
+    public List<Order> getOrdersByProduct(String productName) {
+        return orderRepository.findByProductName(productName);
     }
 
-    public List<Order> getRecentOrder() {
+    public Order getLatestOrder() {
+        return orderRepository.findTopByOrderByTimestampDesc();
+    }
+
+    public List<Order> getRecentOrders() {
         return orderRepository.findAll();
-
     }
 
-    public void processLatestOrder() {
-        Order latest = orderRepository.findTopByOrderByTimestampDesc();
-        if (latest != null) {
-            orderMetrics.updateTemperature(latest.getOrders());
-        }
-    }
+
+
 }

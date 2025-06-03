@@ -8,7 +8,7 @@ import java.time.Instant;
 @Data
 public class OrderDTO {
 
-        private Long Id;
+        private Long id;
         private Long customerId;
         private String productName;
         private int productQuantity;
@@ -17,11 +17,11 @@ public class OrderDTO {
 
 
         public Long getId() {
-                return Id;
+                return id;
         }
 
         public void setId(Long id) {
-                Id = id;
+                id = id;
         }
 
         public Long getCustomerId() {

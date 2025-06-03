@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.model.Observation;
+import com.example.demo.model.Order;
 import com.example.demo.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;

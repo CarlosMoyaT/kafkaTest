@@ -3,29 +3,29 @@ package com.example.demo.kafka;
 
 
 import com.example.demo.dto.OrderDTO;
+import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.Order;
 import com.example.demo.service.OrderService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 
 
 @Component
-public class ObservationListener {
+public class OrderListener {
 
+    private final OrderMapper orderMapper;
     private final OrderService orderService;
 
-    public OrderListener(OrderService orderService) {
+    public OrderListener(OrderService orderService, OrderMapper orderMapper) {
         this.orderService = orderService;
+        this.orderMapper = orderMapper;
     }
 
 
-    @KafkaListener(topics = )
+    @KafkaListener(topics = "realtime_orders", groupId = "order-group")
     public void listen(OrderDTO dto) {
-        // 2. Convert entity to DTO
-        Order order = OrderMapper.toEntity(dto);
+        Order order = orderMapper.toEntity(dto);
         orderService.saveOrder(order);
-        System.out.println("Observation saved: " + order);
+        System.out.println("Order saved: " + order);
     }
 }
