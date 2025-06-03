@@ -11,7 +11,7 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 - PostgreSQL 
 - Prometheus 
 - Grafana 
-- Docker & Docker Compose 
+- Docker 
 
 ## Requisitos previos
 
