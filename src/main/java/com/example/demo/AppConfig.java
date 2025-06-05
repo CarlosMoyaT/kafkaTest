@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Configuration
 @ConfigurationProperties(prefix = "app.kafka")
 
-//This class is used to bind configuration values from application.yml file to the respective fields
+
 @Component
 public class AppConfig {
 

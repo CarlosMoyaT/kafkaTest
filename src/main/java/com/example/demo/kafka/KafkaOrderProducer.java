@@ -29,6 +29,9 @@ public class KafkaOrderProducer {
 
     private final String[] products = {"laptop", "Smartphone", "Tablet", "Keyboard", "Monitor"};
 
+    public KafkaOrderProducer(KafkaTemplate<String, Order> orderKafkaTemplate) {
+        this.orderKafkaTemplate = orderKafkaTemplate;
+    }
 
     @Scheduled(fixedRate = 5000)
     public void produceRandomOrder() {
