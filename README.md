@@ -23,7 +23,7 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 
 De momento he conseguido mostrar métricas en Prometheus con kafka_producer_producer_metrics_response
 
-![Prometheus graphic](images/Metrica.JPG)
+![Prometheus graphic](images/metrica1.JPG)
 
 Serguiré actualizando ya que mi intención es mostrar una gráfica donde se muestren datos como temperatura.
 
