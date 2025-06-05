@@ -4,23 +4,22 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 
 ## TECNOLOGÍAS UTILIZADAS
 
-- Spring Boot
+- Java 21 + Spring Boot
 - Micrometer 
 - Apache Kafka 
 - Zookeeper 
 - PostgreSQL 
 - Prometheus 
 - Grafana 
-- Docker 
+- Docker y Docker Compose para el despliegue
 
-## Requisitos previos
 
-- Docker
-- Docker Compose
-- Java 21
+- ACTUALIZACIÓN DEL PROYECTO-
 
--ACTUALIZACIÓN DEL PROYECTO-
-
+- Métricas -
+  
+- http_server_requests_seconds_count
+  
 De momento muestro http_server_requests_seconds_count para mostrar cuántas peticiones HTTP maneja la aplicación:
 
 ![Prometheus graphic](images/metrica1.JPG)
