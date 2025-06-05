@@ -21,11 +21,11 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 
 -ACTUALIZACIÓN DEL PROYECTO-
 
-De momento he conseguido mostrar métricas en Prometheus con kafka_producer_producer_metrics_response
+De momento muestro http_server_requests_seconds_count para mostrar cuántas peticiones HTTP maneja la aplicación:
 
 ![Prometheus graphic](images/metrica1.JPG)
 
-Serguiré actualizando ya que mi intención es mostrar una gráfica donde se muestren datos como temperatura.
+Serguiré actualizando ya que mi intención es mostrarlo en un dashboard con grafana.
 
 
 
