@@ -16,9 +16,7 @@ El objetivo de este proyecto es principalmente aprender como funciona Kafka y co
 
 - ACTUALIZACIÓN DEL PROYECTO-
 
-- Métricas -
-  
-- http_server_requests_seconds_count
+MÉTRICAS (http_server_requests_seconds_count)
   
 De momento muestro http_server_requests_seconds_count para mostrar cuántas peticiones HTTP maneja la aplicación:
 
